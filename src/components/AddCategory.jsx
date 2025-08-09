@@ -1,29 +1,26 @@
 import { useState } from 'react'
 
-export const AddCategory = ({setCategory}) => {
+export const AddCategory = ({ onNewCategory }) => {
     const [inputValue, setInputValue] = useState('')
     const onInputChanged = ({ target }) => {
         setInputValue(target.value)
     }
     const onSubmit = (event) => {
         event.preventDefault(); //evita q se recargue todo
-         
-        if (inputValue.trim().length<=1) {
-            return;
-        }
-        setCategory(categories=>[...categories,inputValue])
+        const newInpuValue = inputValue.trim()
+        if (newInpuValue.length <= 1) return;
+        onNewCategory(newInpuValue)
         setInputValue('')
-
     }
     return (
-        <form onSubmit={ onSubmit} >
-             <input 
-             type="text" 
-             placeholder='Buscar gif' 
-             value={inputValue} 
-             onChange={(e => {
+        <form onSubmit={onSubmit} >
+            <input
+                type="text"
+                placeholder='Buscar gif'
+                value={inputValue}
+                onChange={(e => {
                     onInputChanged(e);
-            })} />
+                })} />
         </form>
 
     )
