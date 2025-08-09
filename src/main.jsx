@@ -5,10 +5,6 @@ import './styles.css'
 createRoot(document.getElementById('root')).render(
   
   <StrictMode>
-{/* TITLE */}
     <GifExpertApp />
-    {/* input */}
-    {/* listado de gif */}
-      {/* gif item */}
   </StrictMode>,
 )
