@@ -1,4 +1,4 @@
-module.exports = {
-    testEnvironment: 'jest-environment-jsdom',
-    setupFiles: ['./jest.setup.js']
-}
+// jest.config.js
+export default {
+  testEnvironment: "jest-environment-jsdom",
+};
