@@ -1,7 +1,7 @@
 import type { Gif } from "../mock-data/gifs.mock"
 
 interface Props {
-    gifs: Gif[]
+    gifs: Gif[],
 }
 export const GifsList = ({gifs=[]}: Props) => {
   return (
